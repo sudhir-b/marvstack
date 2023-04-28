@@ -1,0 +1,8 @@
+name: marvstack
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - langchain
+  - pip:
+    - openai
