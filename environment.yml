@@ -6,3 +6,5 @@ dependencies:
   - langchain
   - pip:
     - openai
+    - python-dotenv
+    - datamodel-code-generator

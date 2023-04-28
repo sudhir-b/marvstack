@@ -1,0 +1,3 @@
+#!/bin/bash
+
+datamodel-codegen --input petstore.yml --input-file-type openapi --output model.py

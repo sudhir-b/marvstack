@@ -1,0 +1,3 @@
+#!/bin/bash
+
+micromamba install -y -f environment.yml
