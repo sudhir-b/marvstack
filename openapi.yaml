@@ -1,0 +1,54 @@
+openapi: 3.1.0
+info:
+  title: Is Fluffy API
+  description: This API determines whether a pet is fluffy or not.
+  version: 1.0.0
+servers:
+  - url: https://example.com/api
+paths:
+  /is_fluffy:
+    post:
+      summary: Is the pet fluffy?
+      description: Returns whether the pet is fluffy or not.
+      operationId: isPetFluffy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/IsFluffyRequest"
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IsFluffyResponse"
+    get:
+      summary: Returns true
+      description: Returns true
+      operationId: petAlwaysFluffy
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IsFluffyResponse"
+components:
+  schemas:
+    IsFluffyRequest:
+      type: object
+      required:
+        - pet_type
+      properties:
+        pet_type:
+          type: string
+          description: The type of Pet
+          example: cat
+    IsFluffyResponse:
+      type: object
+      required:
+        - is_fluffy
+      properties:
+        is_fluffy:
+          type: boolean

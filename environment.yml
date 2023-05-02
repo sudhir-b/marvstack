@@ -1,4 +1,4 @@
-name: marvstack
+name: openstack
 channels:
   - conda-forge
   - defaults
@@ -8,3 +8,4 @@ dependencies:
     - openai
     - python-dotenv
     - datamodel-code-generator
+    - pyyaml

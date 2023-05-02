@@ -1,0 +1,33 @@
+custom:
+  pythonRequirements:
+    dockerizePip: true
+functions:
+  isPetFluffy:
+    events:
+    - httpApi:
+        method: POST
+        path: /is_fluffy
+    handler: api_stubs.isPetFluffy
+  petAlwaysFluffy:
+    events:
+    - httpApi:
+        method: GET
+        path: /is_fluffy
+    handler: api_stubs.petAlwaysFluffy
+package:
+  exclude:
+  - '**/*'
+  include:
+  - '*.py'
+  - langchain
+plugins:
+- serverless-python-requirements
+provider:
+  environment:
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+  httpApi:
+    cors: true
+  name: aws
+  runtime: python3.9
+  timeout: 29
+service: openstack
